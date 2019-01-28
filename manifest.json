@@ -3,6 +3,10 @@
   "version": "1.0",
   "description": "Add a resource to https://github.com/stevenisbell/resources.",
   "manifest_version": 2,
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
   "page_action": {
     "default_popup": "popup.html",
     "default_icon": {

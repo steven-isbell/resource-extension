@@ -3,10 +3,6 @@
   "version": "1.0",
   "description": "Add a resource to https://github.com/stevenisbell/resources.",
   "manifest_version": 2,
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -21,5 +17,5 @@
     "32": "assets/favicon-32x32.png",
     "144": "assets/ms-icon-144x144.png"
   },
-  "permissions": ["tabs"]
+  "permissions": ["tabs", "storage"]
 }

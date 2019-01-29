@@ -5,16 +5,15 @@ btn.addEventListener('click', () => {
     { active: true, lastFocusedWindow: true, currentWindow: true },
     function(tabs) {
       const url = tabs[0].url;
-      let resources;
-      chrome.storage.sync.set({ foo: 'hello', bar: 'hi' }, () => {
-        alert('Settings saved');
-      });
-      chrome.storage.sync.get(['foo'], items => {
-        alert('Settings retrieved', items);
-      });
+      chrome.storage.sync.set({ foo: 'hello', bar: 'hi' });
     }
   );
 });
+
+// add button for viewing list of saved resources
+// chrome.storage.sync.get(['foo'], items => {
+//     resources = items;
+// });
 
 // Write to local
 // Page to display items

@@ -15,3 +15,7 @@ btn.addEventListener('click', () => {
     }
   );
 });
+
+// Write to local
+// Page to display items
+// form to update name, url, etc. prefill, but editable

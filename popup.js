@@ -1,5 +1,5 @@
 const btn = document.getElementById('click');
-btn.onclick = () => {
+btn.addEventListener('click', () => {
   chrome.tabs.query(
     { active: true, lastFocusedWindow: true, currentWindow: true },
     function(tabs) {
@@ -7,4 +7,4 @@ btn.onclick = () => {
       alert(url);
     }
   );
-};
+});

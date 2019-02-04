@@ -3,11 +3,11 @@ const btn = document.getElementById('click');
 btn.addEventListener('click', () => {
   chrome.tabs.query(
     { active: true, lastFocusedWindow: true, currentWindow: true },
-    function(tabs) {
-      chrome.storage.sync.get(['resources'], items => {
+    tabs => {
+      chrome.storage.sync.get(['resources'], ({ resources = [] }) => {
         const url = tabs[0].url;
-        items.push(url);
-        chrome.storage.sync.set({ resources: items });
+        resources.push(url);
+        chrome.storage.sync.set({ resources });
       });
     }
   );

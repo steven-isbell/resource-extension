@@ -19,6 +19,7 @@ view.addEventListener('click', () => {
     if (!resources[0]) {
       return alert('No resources saved');
     }
+    alert(JSON.stringify(resources));
   });
 });
 

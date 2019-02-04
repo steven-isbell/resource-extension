@@ -1,5 +1,6 @@
 const btn = document.getElementById('click');
 const view = document.getElementById('view');
+const clear = document.getElementById('clear');
 
 btn.addEventListener('click', () => {
   chrome.tabs.query(
@@ -23,8 +24,13 @@ view.addEventListener('click', () => {
   });
 });
 
+clear.addEventListener('click', () => {
+  chrome.storage.sync.clear();
+  alert('Storage Cleared!');
+});
+
 // add button for viewing list of saved resources
 
 // Write to local
-// Page to display items
+// Page in tab to display items
 // form to update name, url, etc. prefill, but editable

@@ -1,4 +1,5 @@
 const btn = document.getElementById('click');
+const view = document.getElementById('view');
 
 btn.addEventListener('click', () => {
   chrome.tabs.query(
@@ -11,6 +12,14 @@ btn.addEventListener('click', () => {
       });
     }
   );
+});
+
+view.addEventListener('click', () => {
+  chrome.storage.sync.get(['resources'], ({ resources = [] }) => {
+    if (!resources[0]) {
+      return alert('No resources saved');
+    }
+  });
 });
 
 // add button for viewing list of saved resources

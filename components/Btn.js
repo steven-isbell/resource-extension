@@ -1,9 +1,9 @@
-function Btn(innerText = 'click', eventType, eventCb, style = null) {
+function Btn(innerText = 'click', eventType = 'click', eventCb, style = null) {
   const btn = document.createElement('button');
 
   btn.innerText = innerText;
 
-  if (handler) {
+  if (eventType && eventCb) {
     btn.addEventListener(eventType, eventCb);
   }
   if (style) {

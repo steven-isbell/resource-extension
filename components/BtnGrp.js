@@ -7,6 +7,9 @@ function BtnGrp() {
       tabs => {
         chrome.storage.sync.get(['resources'], ({ resources = [] }) => {
           const url = tabs[0].url;
+          if (resources.includes(url)) {
+            return;
+          }
           resources.push(url);
           chrome.storage.sync.set({ resources });
         });

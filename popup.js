@@ -1,3 +1,6 @@
+const rootNode = document.getElementById('root');
+rootNode.appendChild(BtnGrp());
+
 const btn = document.getElementById('click');
 const view = document.getElementById('view');
 const clear = document.getElementById('clear');
@@ -20,7 +23,6 @@ view.addEventListener('click', () => {
     if (!resources[0]) {
       return alert('No resources saved');
     }
-    const rootNode = document.getElementById('root');
     const btnGrp = document.getElementsByClassName('button_group')[0];
     rootNode.replaceChild(List(resources), btnGrp);
   });

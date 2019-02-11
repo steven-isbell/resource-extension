@@ -4,15 +4,22 @@
     <style>
       button {
         height: 30px;
-        color: blue;
+        margin-bottom: 10px;
       }
     </style>
   </head>
 
   <body>
-    <button id="click">Save Resource</button> <br />
-    <button id="view">View Resources</button> <br />
-    <button id="clear">Clear Resources</button>
+    <div id="root">
+      <div class="button_group">
+        <button id="click">Save Resource</button>
+        <button id="view">View Resources</button>
+        <button id="clear">Clear Resources</button>
+      </div>
+    </div>
   </body>
+
+  <script src="./components/ListItem.js"></script>
+  <script src="./components/List.js"></script>
   <script src="popup.js"></script>
 </html>

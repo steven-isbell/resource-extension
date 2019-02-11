@@ -20,7 +20,9 @@ view.addEventListener('click', () => {
     if (!resources[0]) {
       return alert('No resources saved');
     }
-    alert(JSON.stringify(resources));
+    const rootNode = document.getElementById('root');
+    const btnGrp = document.getElementsByClassName('button_group')[0];
+    rootNode.replaceChild(List(resources), btnGrp);
   });
 });
 

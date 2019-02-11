@@ -1,4 +1,4 @@
-function Btn(style = null, innerText = 'click', eventType, eventCb) {
+function Btn(innerText = 'click', eventType, eventCb, style = null) {
   const btn = document.createElement('button');
 
   btn.innerText = innerText;

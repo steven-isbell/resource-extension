@@ -1,6 +1,12 @@
 function List(listItems) {
   const el = document.createElement('div');
-  const btn = BackBtn();
+  const btn = Btn('Back', 'click', () => {
+    const rootNode = document.getElementById('root');
+    const btnGrp = BtnGrp();
+    const child = rootNode.firstChild;
+
+    rootNode.replaceChild(btnGrp, child);
+  });
 
   el.setAttribute(
     'style',

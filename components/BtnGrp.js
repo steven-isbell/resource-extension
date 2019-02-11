@@ -1,14 +1,7 @@
 function BtnGrp() {
   const el = document.createElement('div');
-  const save = Btn();
-  const view = Btn();
-  const clear = Btn();
-  el.classList.add('button_group');
-  el.innerHTML = `<button id="click">Save Resource</button>
-    <button id="view">View Resources</button>
-    <button id="clear">Clear Resources</button>`;
 
-  save.addEventListener('click', () => {
+  const save = Btn('Save Resource', 'click', () => {
     chrome.tabs.query(
       { active: true, lastFocusedWindow: true, currentWindow: true },
       tabs => {
@@ -21,7 +14,7 @@ function BtnGrp() {
     );
   });
 
-  view.addEventListener('click', () => {
+  const view = Btn('View Resources', 'click', () => {
     chrome.storage.sync.get(['resources'], ({ resources = [] }) => {
       if (!resources[0]) {
         return alert('No resources saved');
@@ -31,10 +24,16 @@ function BtnGrp() {
     });
   });
 
-  clear.addEventListener('click', () => {
+  const clear = Btn('Clear Resources', 'click', () => {
     chrome.storage.sync.clear();
     alert('Storage Cleared!');
   });
+
+  el.classList.add('button_group');
+
+  const btns = [save, view, clear];
+
+  btns.forEach(val => el.appendChild(val));
 
   return el;
 }
